@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void les2(String[] args) {
+    public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
 
@@ -15,7 +15,7 @@ public class Main {
         String valTwo = in.nextLine();
         int i2 = Integer.parseInt(valTwo);
 
-        System.out.println(i1 + i2);
+        System.out.println("Итог: " + i1+i2);
 
     }
 }
