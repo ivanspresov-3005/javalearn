@@ -1,7 +1,7 @@
 package com.nivafex;
 import java.util.Scanner;
 
-public class Main {
+public class les2 {
 
     public static void main(String[] args) {
 
