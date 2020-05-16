@@ -25,6 +25,18 @@ public class ArrayListDemo {
         al.remove(2);
         pw.accept("Size of al after deleting: " + al.size());
         pw.accept("Contents of al: " + al);
+        String[] ai = new String[al.size()];
+        ai = al.toArray(ai);
+        pw = System.out::print;
+        pw.accept("Content of ai: [");
+        int i = 0;
+        for (String element : ai) {
+            if (i != ai.length - 1)
+                pw.accept(element + ", ");
+            else pw.accept(element);
+            i++;
+        }
+        pw.accept("]");
 
     }
 }
