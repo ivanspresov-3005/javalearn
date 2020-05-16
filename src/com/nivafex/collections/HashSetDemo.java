@@ -30,6 +30,7 @@ public class HashSetDemo {
         TreeSet<String> ts1 = new TreeSet<>(comparator::compare);
         ts1.addAll(hs);
         pw.accept(ts1.toString());
+        pw.accept(ts1.subSet("Gamma", "Beta").toString());
 
     }
 }
