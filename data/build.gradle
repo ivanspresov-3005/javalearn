@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+group 'org.medical'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+ext {
+    springVersion = '5.1.5.RELEASE'
+    springDataVersion = '2.1.5.RELEASE'
+    hibernateVersion = '5.4.1.Final'
+    postgresVersion = '42.2.12'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation("org.springframework:spring-orm:${springVersion}")
+    implementation("org.springframework.data:spring-data-jpa:${springDataVersion}")
+    implementation("org.hibernate:hibernate-core:${hibernateVersion}")
+    runtime("org.postgresql:postgresql:${postgresVersion}")
+}

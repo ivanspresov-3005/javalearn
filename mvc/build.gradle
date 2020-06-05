@@ -1,0 +1,40 @@
+apply plugin: 'java'
+apply plugin: 'war'
+
+ext {
+    springVersion = '5.1.5.RELEASE'
+    junitVersion = '5.3.1'
+    servletApi = '3.1.0'
+    jspVersion = '2.2'
+    tomcatHome ='d:/opt/apache-tomcat-9.0.35'
+}
+
+group 'org.medical'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    implementation("org.springframework:spring-webmvc:${springVersion}")
+    providedCompile("javax.servlet:javax.servlet-api:${servletApi}")
+    providedCompile("javax.servlet.jsp:jsp-api:${jspVersion}")
+    compile 'javax.servlet:jstl:1.2'
+    implementation project(":data")
+}
+
+war {
+    archiveName = 'medical.war'
+}
+
+task deployToTomcat(type: Copy) {
+    dependsOn war
+    print("Copy war")
+    from war.archivePath
+    into "${tomcatHome}/webapps"
+}
+
